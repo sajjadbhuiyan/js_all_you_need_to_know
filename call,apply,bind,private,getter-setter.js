@@ -17,6 +17,10 @@ function CreateRrc(width, height) {
   this.width = width;
   this.height = height;
 
+  //   this.getPosition = () => {
+  //     return position;
+  //   };
+
   var printPropertise = function () {
     console.log("My width is" + " " + this.width);
     console.log("My height is" + " " + this.height);
@@ -27,7 +31,21 @@ function CreateRrc(width, height) {
     printPropertise();
     console.log(position.x, position.y);
   };
+
+  Object.defineProperty(this, "position", {
+    get: function () {
+      return position;
+    },
+    set: function (value) {
+      position = value;
+    },
+  });
 }
 
 var newCreatRrc = new CreateRrc(25, 20);
-newCreatRrc.draw();
+newCreatRrc.position = {
+  x: 320,
+  y: 544,
+};
+
+console.log(newCreatRrc.position);
