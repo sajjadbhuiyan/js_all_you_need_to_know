@@ -13,5 +13,5 @@ function CreateRrc(width, height) {
   };
 }
 
-var newCreateRrc = new CreateRrc(25, 20);
+var newCreateRrc = new CreateRrc(25, 20); //when we use new keyword that time an empty object generate in certain function and that function all code associate with that empty object.
 newCreateRrc.draw();
