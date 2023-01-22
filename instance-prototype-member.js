@@ -1,11 +1,17 @@
 function Square(width, height) {
   this.width = width;
   this.height = height;
+
+  this.getWidth = function () {
+    console.log("My width is" + this.width);
+    // this.draw();
+  };
 }
 
 Square.prototype = {
   draw: function () {
     console.log("this is draw function");
+    this.getWidth();
   },
 
   toString: function () {
