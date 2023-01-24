@@ -13,4 +13,5 @@ const find = myFind(number, function (value) {
   return value === 6;
 });
 
-console.log(find);
+console.log(typeof find);
+console.log(number);
