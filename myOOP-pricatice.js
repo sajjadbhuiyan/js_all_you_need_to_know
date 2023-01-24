@@ -16,6 +16,7 @@ function University(name, ranking) {
 }
 
 University.prototype = Object.create(Course.prototype);
+University.prototype.constructor = University;
 
 University.prototype.region = {
   country: "Bangladesh",
