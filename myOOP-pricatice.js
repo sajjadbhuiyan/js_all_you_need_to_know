@@ -1,12 +1,20 @@
-function Course() {}
+function extend(parant, child) {
+  child.prototype = Object.create(parant.prototype);
+  child.prototype.constructor = child;
+}
+
+function Course(courseName) {
+  this.courseName = courseName;
+}
 
 Course.prototype.cost = function () {
   console.log("Const is heigh");
 };
 
-function University(name, ranking) {
+function University(name, ranking, courseName) {
   this.name = name;
   this.ranking = ranking;
+  Course.call(this, courseName);
 
   this.getRanking = function () {
     console.log(
@@ -15,19 +23,26 @@ function University(name, ranking) {
   };
 }
 
-University.prototype = Object.create(Course.prototype);
-University.prototype.constructor = University;
+// University.prototype = Object.create(Course.prototype);
+// University.prototype.constructor = University;
+
+extend(Course, University);
 
 University.prototype.region = {
   country: "Bangladesh",
   continant: "Asia",
 };
 
-var uni = new University("BUP", 5674);
-const crs = new Course();
+var uni = new University("BUP", 5674, "hons");
+// const crs = new Course();
 
-// function College() {}
+function College(quality, courseName) {
+  this.quality = quality;
+  Course.call(this, courseName);
+}
 
-// College.prototype.name = "NDC";
+College.prototype.name = "NDC";
 
-// College.prototype = Object.create(Course.prototype);
+extend(Course, College);
+
+var college = new College("unique", "HSC");
