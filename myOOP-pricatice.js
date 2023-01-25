@@ -14,7 +14,7 @@ Course.prototype.cost = function () {
 function University(name, ranking, courseName) {
   this.name = name;
   this.ranking = ranking;
-  Course.call(this, courseName);
+  Course.call(this, courseName); //calling super
 
   this.getRanking = function () {
     console.log(
@@ -27,6 +27,10 @@ function University(name, ranking, courseName) {
 // University.prototype.constructor = University;
 
 extend(Course, University);
+
+University.prototype.cost = function () {
+  console.log("University cost is heigher than College cost");
+};
 
 University.prototype.region = {
   country: "Bangladesh",
