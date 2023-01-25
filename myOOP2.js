@@ -8,11 +8,11 @@ function Routine(startTime, endTime) {
   this.endTime = endTime;
 }
 
-// Routine.prototype.routine = function () {
-//   console.log(
-//     `Class time start from ${this.startTime} and end will be ${this.endTime}`
-//   );
-// };
+Routine.prototype.routine = function () {
+  console.log(
+    `Class time start from ${this.startTime} and end will be ${this.endTime}`
+  );
+};
 
 function Semester(semesterName, duration, startTime, endTime) {
   this.semesterName = semesterName;
@@ -35,5 +35,10 @@ function StudyYear(year) {
   this.year = year;
 }
 
-StudyYear.prototype = Object.create(Routine.prototype);
-StudyYear.prototype = StudyYear;
+extend(Routine, StudyYear);
+
+StudyYear.prototype.routine = function () {
+  console.log(`Study year is ${this.year}`);
+};
+
+const studyYear = new StudyYear(2020);
