@@ -1,9 +1,9 @@
-const Rectangale = require("./Rectangale");
+/* const Rectangale = require("./Rectangale");
 
-const rec = new Rectangale(30, 25, "green");
-console.log(rec);
+const rec2 = new Rectangale(30, 25, "green");
+console.log(rec2); */
 
-/* function Shape(color) {
+function Shape(color) {
   this.color = color;
 }
 
@@ -31,4 +31,4 @@ Rectangale.prototype.common = function () {
   console.log("Overridding from recthangale constractor pattern");
 };
 
-const rec = new Rectangale(30, 25, "Green"); */
+const rec = new Rectangale(30, 25, "Green");
